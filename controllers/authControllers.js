@@ -122,12 +122,11 @@ const getUser = async(req,res) =>{
 
 const logout = async(req,res) =>{
     try{
-        res.clearCookie('jwt',{
-            expires:new Date(Date.now())
-        }).status(200).json({
+        res.clearCookie('jwt').status(200).json({
             success:true,
             message:"Logout Successfull."
         })
+        
     }catch(error){
         res.status(500).json({
             success:false,
